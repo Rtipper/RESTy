@@ -3,6 +3,8 @@ import React from 'react';
 import HeaderTitle from './header/headerTitle.js'
 import HeaderRadio from './header/headerRadio.js'
 
+import Body from './body/body.js'
+
 import Footer from './footer/footer.js';
 
 
@@ -21,17 +23,14 @@ class App extends React.Component {
       <>
         <HeaderTitle />
         <div>
-          {this.state.words}
           <div>
             <input type="text" />
           </div>
         </div>
         <div>
-          {this.state.clicks}
-
-          <button onClick={this.handleIncrement}>+</button>
         </div>
         <HeaderRadio />
+        <Body />
         <Footer />
       </>
     );
