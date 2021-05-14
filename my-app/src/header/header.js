@@ -3,7 +3,9 @@ import './header.css';
 function HeaderTitle() {
   return (
     <header>
-      <h1>RESTy</h1>
+      <div id='topTitle'>
+        <h1>RESTy</h1>
+      </div>
     </header>
   )
 }
