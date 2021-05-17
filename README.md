@@ -4,7 +4,7 @@
 **Version**: 1.0.0
 
 # Pull Request
--  https://github.com/Rtipper/RESTy/pull/1
+-  https://github.com/Rtipper/RESTy/pull/2
 
 
 ## Overview - First practice at building the RESTy application with React
