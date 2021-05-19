@@ -1,4 +1,4 @@
-# Lab 26  -- RESTy pt1
+# Lab 26 | 27  -- RESTy pt1 | pt2
 
 **Author**: Ryan Tipper
 **Version**: 1.0.0
