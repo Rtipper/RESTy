@@ -8,7 +8,7 @@
 
 # Netlify Deployment
 - https://priceless-fermi-c1f4eb.netlify.app/
-- 
+
 ## Overview - First practice at building the RESTy application with React
 
 
