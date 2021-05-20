@@ -15,7 +15,6 @@
     "node": true
   },
   "rules": {
-    "eol-last": "error",
     "eqeqeq": [
       "error",
       "always"

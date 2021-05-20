@@ -5,11 +5,11 @@ import './App.scss';
 import axios from 'axios';
 
 // HEADER
-import Header from './components/header/header.js'
+import Header from './components/header/header.js';
 // import HeaderRadio from './header/headerRadio.js'
 
 // BODY / FORM
-import Form from './components/body/body.js'
+import Form from './components/body/body.js';
 
 // FOOTER
 import Footer from './components/footer/footer.js';
@@ -17,37 +17,37 @@ import Footer from './components/footer/footer.js';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       urlInput: '',
       method: '',
       search: '',
       headers: '',
       results: ''
-    }
+    };
   }
 
   goInput = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (this.state.method === 'get' && this.state.urlInput) {
       this.setState(
         { ...this.state, search: `${this.state.method} ${this.state.urlInput}` }
-      )
+      );
       await axios.get(this.state.urlInput)
         .then(res => {
           this.setState(
             { ...this.state, headers: res.headers, results: res.data.results }
           );
-        })
+        });
     }
   }
 
   handleChangeInput = (e) => {
     this.setState(
       { ...this.state, [e.target.name]: e.target.value }
-    )
+    );
   }
-  
+
   //   handleChangeMethod = (e) => {
   //   this.setState(
   //     { ...this.state.formValues, [e.target.name]: e.target.value }
@@ -81,12 +81,12 @@ class App extends React.Component {
       <>
         <div className="my-app">
           <Header />
-          <Form 
-          handleChange={this.handleChangeInput}
-          goInput={this.goInput}
-          headers={this.state.headers}
-          search={this.state.search}
-          results={this.state.results}
+          <Form
+            handleChange={this.handleChangeInput}
+            goInput={this.goInput}
+            headers={this.state.headers}
+            search={this.state.search}
+            results={this.state.results}
           />
           <Footer />
         </div>

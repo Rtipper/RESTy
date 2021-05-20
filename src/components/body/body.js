@@ -8,51 +8,38 @@ class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.props.goInput}>
-      <div>
-        URL: <input onChange={this.props.handleChange} type="text" name="urlInput" />
-        <button>CATCH EM' ALL!</button>
-      </div>
-      <div className="radio">
-        <label>
-          <input onChange={this.props.handleChange} type="radio" name="method" value="get" />
+        <div>
+          URL: <input onChange={this.props.handleChange} type="text" name="urlInput" />
+          <button>CATCH EM' ALL!</button>
+        </div>
+        <div className="radio">
+          <label>
+            <input onChange={this.props.handleChange} type="radio" name="method" value="get" />
           GET
-        </label>
-        <label>
-          <input onChange={this.props.handleChange} type="radio" name="method" value="post" />
+          </label>
+          <label>
+            <input onChange={this.props.handleChange} type="radio" name="method" value="post" />
           POST
-        </label>
-        <label>
-          <input onChange={this.props.handleChange} type="radio" name="method" value="put" />
+          </label>
+          <label>
+            <input onChange={this.props.handleChange} type="radio" name="method" value="put" />
           PUT
-        </label>
-        <label>
-          <input onChange={this.props.handleChange} type="radio" name="method" value="delete" />
+          </label>
+          <label>
+            <input onChange={this.props.handleChange} type="radio" name="method" value="delete" />
           DELETE
-        </label>
-      </div>
+          </label>
+        </div>
 
         <div className="results">
           <p className="results-output">
-            <Results resultsHeaders={this.props.headers} searchResults={this.props.results}/>
+            <Results resultsHeaders={this.props.headers} searchResults={this.props.results} />
           </p>
         </div>
 
       </form>
-    )
+    );
   }
 }
 
-export default Form 
-
-
-// function Body() {
-//   return (
-//     <body>
-//       <div>
-//             <input type="text" />
-//           </div>
-//     </body>
-//   )
-// }
-
-// export default Body;
+export default Form;

@@ -7,7 +7,7 @@ function HeaderTitle() {
         <h1>RESTy</h1>
       </div>
     </header>
-  )
+  );
 }
 
 export default HeaderTitle;
