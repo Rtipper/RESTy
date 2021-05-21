@@ -1,12 +1,20 @@
 import React from 'react';
 import './App.scss';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
+import Home from './pages/home/home.js';
+import Pokemon from './pages/pokemon/pokemon';
+import History from './pages/history/history';
+import Help from './pages/help/help';
 
 import axios from 'axios';
 
 // HEADER
 import Header from './components/header/header.js';
 // import HeaderRadio from './header/headerRadio.js'
+
+// NAV BAR
+import NavBar from './components/nav/nav';
 
 // BODY / FORM
 import Form from './components/body/body.js';
@@ -48,47 +56,34 @@ class App extends React.Component {
     );
   }
 
-  //   handleChangeMethod = (e) => {
-  //   this.setState(
-  //     { ...this.state.formValues, [e.target.name]: e.target.value }
-  //   )
-  //   console.log(e)
-  // }
-
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     clicks: 0,
-  //     words: "Search Results Here.."
-  //   };
-  // }
-
-  // handleChangeInput = (e) => {
-  //   let fieldName = e.target.name;
-  //   let value = e.target.value;
-  //   let formValues = { ...this.state.formValues, [fieldName]: value }
-  //   this.setState({ formValues });
-
-  // }
-
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   this.setState({ ...this.state, words: this.state.formValues.words })
-  // }
-
   render() {
     return (
       <>
         <div className="my-app">
           <Header />
-          <Form
-            handleChange={this.handleChangeInput}
-            goInput={this.goInput}
-            headers={this.state.headers}
-            search={this.state.search}
-            results={this.state.results}
-          />
-          <Footer />
+          <Router>
+            <NavBar />
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/pokemon">
+              <Pokemon />
+              <Form
+                handleChange={this.handleChangeInput}
+                goInput={this.goInput}
+                headers={this.state.headers}
+                search={this.state.search}
+                results={this.state.results}
+              />
+            </Route>
+            <Route exact path="/history">
+              <History />
+            </Route>
+            <Route exact path="/help">
+              <Help />
+            </Route>
+            <Footer />
+          </Router>
         </div>
       </>
     );
