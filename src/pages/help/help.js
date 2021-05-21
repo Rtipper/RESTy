@@ -1,9 +1,12 @@
 import React from 'react';
+import './help.scss';
 
 class Help extends React.Component {
   render() {
     return (
-      null
+      <div>
+        <h1> THIS IS YOUR HELP</h1>
+      </div>
     );
   }
 }

@@ -10,7 +10,7 @@ class Form extends React.Component {
       <form onSubmit={this.props.goInput}>
         <div>
           URL: <input onChange={this.props.handleChange} type="text" name="urlInput" />
-          <button>CATCH EM' ALL!</button>
+          <button class="catchEm">CATCH EM' ALL!</button>
         </div>
         <div className="radio">
           <label>

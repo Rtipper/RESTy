@@ -1,9 +1,12 @@
 import React from 'react';
+import './history.scss';
 
 class History extends React.Component {
   render() {
     return (
-      null
+      <div>
+        <h1> THIS IS YOUR HISTORY</h1>
+      </div>
     );
   }
 }
