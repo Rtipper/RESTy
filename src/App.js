@@ -35,7 +35,7 @@ class App extends React.Component {
     };
   }
 
-  goInput = async (e) => {
+  getInput = async (e) => {
     e.preventDefault();
     if (this.state.method === 'get' && this.state.urlInput) {
       this.setState(
