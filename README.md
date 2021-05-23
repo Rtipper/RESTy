@@ -10,6 +10,7 @@
 - https://agitated-golick-72b339.netlify.app
 
 # UML (Lab 29)
+- ![UML](UML.png)
 
 ## Overview - First practice at building the RESTy application with React
 
