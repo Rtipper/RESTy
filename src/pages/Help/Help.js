@@ -1,12 +1,11 @@
 import React from 'react';
-import './help.scss';
+import './Help.scss';
 
 class Help extends React.Component {
+
   render() {
     return (
-      <div>
-        <h1> THIS IS YOUR HELP</h1>
-      </div>
+      <h3>You Look a Little Lost.. Use the Nav Bar Above!</h3>
     );
   }
 }
