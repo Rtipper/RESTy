@@ -1,94 +1,42 @@
 import React from 'react';
-import './App.scss';
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Home from './pages/home/home.js';
-import Pokemon from './pages/pokemon/pokemon';
-import History from './pages/history/history';
-import Help from './pages/help/help';
+import { BrowserRouter, Route } from "react-router-dom";
 
-import axios from 'axios';
+import Header from './components/Header/Header.js';
+import Nav from './components/Nav/Nav.js';
+import Footer from './components/Footer/Footer.js';
+import Home from './pages/Home/Home.js';
+import Pokemon from './pages/Pokemon/Pokemon.js';
+import History from './pages/History/History.js';
+import Help from './pages/Help/Help.js';
 
-// HEADER
-import Header from './components/header/header.js';
-// import HeaderRadio from './header/headerRadio.js'
-
-// NAV BAR
-import NavBar from './components/nav/nav';
-
-// BODY / FORM
-import Form from './components/body/body.js';
-
-// FOOTER
-import Footer from './components/footer/footer.js';
-
+import './design.scss';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      urlInput: '',
-      method: '',
-      search: '',
-      headers: '',
-      results: ''
-    };
-  }
-
-  getInput = async (e) => {
-    e.preventDefault();
-    if (this.state.method === 'get' && this.state.urlInput) {
-      this.setState(
-        { ...this.state, search: `${this.state.method} ${this.state.urlInput}` }
-      );
-      await axios.get(this.state.urlInput)
-        .then(res => {
-          this.setState(
-            { ...this.state, headers: res.headers, results: res.data.results }
-          );
-        });
-    }
-  }
-
-  handleChangeInput = (e) => {
-    this.setState(
-      { ...this.state, [e.target.name]: e.target.value }
-    );
-  }
 
   render() {
     return (
-      <>
-        <div className="my-app">
-          <Header />
-          <Router>
-            <NavBar />
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/pokemon">
-              <Pokemon />
-              <Form
-                handleChange={this.handleChangeInput}
-                goInput={this.goInput}
-                headers={this.state.headers}
-                search={this.state.search}
-                results={this.state.results}
-              />
-            </Route>
-            <Route exact path="/history">
-              <History />
-            </Route>
-            <Route exact path="/help">
-              <Help />
-            </Route>
-            <Footer />
-          </Router>
-        </div>
-      </>
+      <BrowserRouter>
+        <Header />
+        <main>
+          <Nav />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/pokemon">
+            <Pokemon />
+          </Route>
+          <Route exact path="/history">
+            <History />
+          </Route>
+          <Route exact path="/help">
+            <Help />
+          </Route>
+        </main>
+        <Footer />
+      </BrowserRouter>
     );
   }
-
 }
 
 export default App;
