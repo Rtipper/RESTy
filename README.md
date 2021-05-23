@@ -1,4 +1,4 @@
-# Lab 26 | 27  -- RESTy pt1 | pt2
+# Lab 26 | 27  -- RESTy pt1 | pt2 | pt3
 
 **Author**: Ryan Tipper
 **Version**: 1.0.0
@@ -7,7 +7,7 @@
 -  https://github.com/Rtipper/RESTy/pull/2
 
 # Netlify Deployment
-- https://priceless-fermi-c1f4eb.netlify.app/
+- 
 
 ## Overview - First practice at building the RESTy application with React
 
